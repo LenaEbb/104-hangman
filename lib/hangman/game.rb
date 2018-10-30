@@ -19,14 +19,14 @@ module Hangman
         char = gets.chomp
         Graphics.clear_screen
 
+        if char.nil? || char == ""
+          puts 'Seriously? You gotta type a letter!'
+          puts 'Try again: ' + Graphics.obfuscate_word(word, guess)
+          next
+        end
+
 
         if word.include? char
-
-          if char.nil? || char == ""
-            puts 'Seriously? You gotta type a letter!'
-            puts 'Try again: ' + Graphics.obfuscate_word(word, guess)
-            next
-          end
 
           if guess.include? char
             puts "You already entered '#{char}'. Yes, it is still correct.. 🙄"

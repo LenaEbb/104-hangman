@@ -47,13 +47,14 @@ module Hangman
         else
           puts "OH NOES! The word doesn't contain '#{char}'"
 
-          @wrong_tries = @wrong_tries + 1
+
 
           if guess.include? char
             puts "You already entered '#{char}'. Duh, it's still totally wrong.. 🙄"
             puts 'Try again: ' + Graphics.obfuscate_word(word, guess)
           else
             print "[#{chances - wrong_tries} chances left]: "
+            @wrong_tries = @wrong_tries + 1
           end
 
 

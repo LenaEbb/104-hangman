@@ -22,9 +22,10 @@ module Hangman
 
         if word.include? char
 
-          if guess.nil? || guess == ""
+          if char.nil? || char == ""
             puts 'Seriously? You gotta type a letter!'
             puts 'Try again: ' + Graphics.obfuscate_word(word, guess)
+            next
           end
 
           if guess.include? char
@@ -36,6 +37,7 @@ module Hangman
             puts 'Whoop Whoop!! ' + placeholder
           end
 
+
             unless placeholder.include? Graphics::OBFUSCATION_CHAR
             puts Graphics::ALIVE
             puts "\n\nWELL DONE!! YOU SURVIVED"
@@ -44,7 +46,17 @@ module Hangman
 
         else
           puts "OH NOES! The word doesn't contain '#{char}'"
+
           @wrong_tries = @wrong_tries + 1
+
+          if guess.include? char
+            puts "You already entered '#{char}'. Duh, it's still totally wrong.. 🙄"
+            puts 'Try again: ' + Graphics.obfuscate_word(word, guess)
+          else
+            print "[#{chances - wrong_tries} chances left]: "
+          end
+
+
 
 
 

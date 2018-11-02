@@ -9,7 +9,16 @@ module Hangman
       @word = Dictionary.random
     end
 
-    def play
+    Signal.trap ("SIGINT") do
+      Graphics.clear_screen
+      puts "Giving up? So soon? SMH..."
+      exit
+    end
+
+
+
+
+     def play
       Graphics.clear_screen
       puts 'Guess this word: ' + Graphics.obfuscate_word(word, '')
 
@@ -18,6 +27,8 @@ module Hangman
 
         char = gets.chomp
         Graphics.clear_screen
+
+
 
         if char.nil? || char == ""
           puts 'Seriously? You gotta type a letter!'

@@ -27,7 +27,7 @@ WIN
 
 WIN
 
-ALIVE3 = <<WIN
+   ALIVE3 = <<WIN
 
    (•_•)
    <)  )>

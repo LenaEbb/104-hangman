@@ -49,7 +49,7 @@ module Hangman
           end
 
 
-            unless placeholder.include? Graphics::OBFUSCATION_CHAR
+          unless placeholder.include? Graphics::OBFUSCATION_CHAR
             Graphics.clear_screen
             puts Graphics::ALIVE
             sleep 1

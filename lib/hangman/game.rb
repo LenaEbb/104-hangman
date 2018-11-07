@@ -15,10 +15,7 @@ module Hangman
       exit
     end
 
-
-
-
-     def play
+    def play
       Graphics.clear_screen
       puts 'Guess this word: ' + Graphics.obfuscate_word(word, '')
 
@@ -27,8 +24,6 @@ module Hangman
 
         char = gets.chomp
         Graphics.clear_screen
-
-
 
         if char.nil? || char == ""
           puts 'Seriously? You gotta type a letter!'
@@ -41,7 +36,6 @@ module Hangman
           puts 'Try again: ' + Graphics.obfuscate_word(word, guess)
           next
         end
-
 
         if word.include? char
 
@@ -59,17 +53,11 @@ module Hangman
             Graphics.clear_screen
             puts Graphics::ALIVE
             sleep 1
-            Graphics.clear_screen
-            puts Graphics::ALIVE2
-            sleep 1
-            Graphics.clear_screen
-            puts Graphics::ALIVE3
-            sleep 1
             puts "\n\nWELL DONE!! YOU SURVIVED"
             break
           end
 
-        else
+         else
 
           if guess.include? char
             puts "You already entered '#{char}'. Duh, it's still totally wrong.. 🙄"
@@ -80,9 +68,7 @@ module Hangman
             @wrong_tries = @wrong_tries + 1
           end
 
-
-
-            if wrong_tries == chances
+          if wrong_tries == chances
             puts Graphics::DEAD
             puts "\nARRRRGGGGGGGGGGG YOU LOST! 😭  😵  ☠️"
             break

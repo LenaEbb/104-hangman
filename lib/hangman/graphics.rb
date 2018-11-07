@@ -17,17 +17,13 @@ HANG
   <)  )╯
   /   \\
 
-WIN
-
-   ALIVE2 = <<WIN
+sleep 1
 
  \(•_•)
   (  (>
   /   \\
 
-WIN
-
-   ALIVE3 = <<WIN
+sleep 1
 
    (•_•)
    <)  )>
